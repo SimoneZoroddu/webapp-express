@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
-
+const movieRoute = require("./routes/movie")
 const PORT = process.env.PORT || "my_port"
 
 const connection = require("./data/connnection")
@@ -13,3 +13,5 @@ app.listen(PORT, () => {
 app.get('/', (req, res)=>{
     res.send("Tutto pronto")
 })
+
+app.use('/movies', movieRoute)
