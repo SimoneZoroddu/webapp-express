@@ -1,9 +1,12 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
-app.use(express.static('public'))
 const serverError = require('./middleware/serverError')
 const notFound = require('./middleware/notFound')
+const cors = require('cors')
+
+app.use(express.static('public'))
+app.use(cors())
 
 const movieRoute = require("./routes/movie")
 const PORT = process.env.PORT || "my_port"
