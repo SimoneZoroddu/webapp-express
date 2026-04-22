@@ -26,6 +26,7 @@ const show = (req, res) => {
         if (result.length === 0) {
             return res.status(404).json({ error: 'Movie not found' })
         }
+        
         connection.query(mysqlReview, [id], (err, resultReview)=>{
             if(err) {
                 console.error(err)
