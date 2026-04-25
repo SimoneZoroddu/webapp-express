@@ -51,24 +51,25 @@ const show = (req, res) => {
 // STORE    /       POST      (add new at server)
 const store = (req, res) => {
 
-    const { title, director, image } = req.body
+    const { movie_id, name, vote, text } = req.body
 
     const mysql = `
-    INSERT INTO movies (title, director, image)
-    VALUES (?, ?, ?)
+    INSERT INTO reviews (movie_id, name, vote, text)
+    VALUES (?, ?, ?, ?)
   `
 
-    connection.query(mysql, [title, director, image], (err, results) => {
+    connection.query(mysql, [movie_id, name, vote, text], (err, results) => {
         if (err) return res.status(500).json({ error: "Database error" })
 
-        const newMovies = {
+        const newReview = {
             id: results.insertId,
-            title,
-            director,
-            image
+            movie_id,
+            name,
+            vote,
+            text
         }
 
-        res.status(201).json(newMovies)
+        res.status(201).json(newReview)
 
     })
 
