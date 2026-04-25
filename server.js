@@ -7,7 +7,7 @@ const cors = require('cors')
 
 app.use(express.static('public'))
 app.use(cors())
-
+app.use(express.json())
 const movieRoute = require("./routes/movie")
 const PORT = process.env.PORT || "my_port"
 
@@ -18,7 +18,7 @@ app.listen(PORT, () => {
     console.log(`Post API listening on http://127.0.0.1:${PORT}`);
 })
 
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.send("Tutto pronto")
 })
 
