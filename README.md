@@ -70,6 +70,12 @@ DB_PASSWORD=
 DB_NAME=
 ```
 
+## Backend
+
+This project is designed to work with the companion:
+
+- WebApp React
+
 ## Author
 
 [Simone Zoroddu](https://github.com/SimoneZoroddu)
