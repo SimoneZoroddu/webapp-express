@@ -70,7 +70,7 @@ DB_PASSWORD=
 DB_NAME=
 ```
 
-## Backend
+## Frontend
 
 This project is designed to work with the companion:
 
